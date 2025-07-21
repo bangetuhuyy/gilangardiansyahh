@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>gilang</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body class="layout-wrapper">
+  <div class="hero">
+
+    <nav class="navbar">
+      <div class="logo">@gilang.ardiansyahh</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+
+        <li class="dropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown('menu1')">Produk 1 ▾</button>
+          <ul class="dropdown-menu" id="menu1">
+            <li><a href="produkJaketcredifoxl.html">Jaket Credifox</a></li>
+            <li><a href="produkJaketscreamos.html">Jaket Screamos</a></li>
+            <li><a href="produkJaketdobujack.html">Jaket Dobujack</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <button class="dropdown-btn" onclick="toggleDropdown('menu2')">Produk 2 ▾</button>
+          <ul class="dropdown-menu" id="menu2">
+            <li><a href="produk2celanaCredifox.html">Celana Credifox</a></li>
+            <li><a href="produk2celanaScreamos.html">Celana Screamous</a></li>
+            <li><a href="produk2celanaDobujack.html">Celana Dobujack</a></li>
+          </ul>
+        </li>
+
+        <li><a href="abouttoko.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h1>Gilang Store</h1>
+      <p>Cari promo gak perlu keliling,
+Ke Gilang Store pasti thrilling!</p>
+      <a href="biodata.html" class="btn">MORE INFO</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleDropdown(id) {
+      const menu = document.getElementById(id);
+      const isVisible = menu.style.display === "block";
+      document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+      menu.style.display = isVisible ? "none" : "block";
+    }
+
+    window.addEventListener("click", function(e) {
+      if (!e.target.matches(".dropdown-btn")) {
+        document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+      }
+    });
+  </script>
+</body>
+</html>

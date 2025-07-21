@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>About - Gilang Store</title>
+  <link rel="stylesheet" href="abouttoko.css" />
+</head>
+<body>
+    <div class="hero" >
+  <nav class="navbar">
+    <div class="logo">@gilang.ardiansyahh</div>
+    <ul class="nav-links">
+      <li><a href="home.html">Home</a></li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown('menu1')">Produk 1 ▾</button>
+        <ul class="dropdown-menu" id="menu1">
+          <li><a href="produkJaketcredifoxl.html">Jaket Credifox</a></li>
+          <li><a href="produkJaketscreamos.html">Jaket Screamous</a></li>
+          <li><a href="produkJaketdobujack.html">Jaket Dobujack</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <button class="dropdown-btn" onclick="toggleDropdown('menu2')">Produk 2 ▾</button>
+        <ul class="dropdown-menu" id="menu2">
+          <li><a href="produk2celanaCredifox.html">Celana Credifox</a></li>
+          <li><a href="produk2celanaScreamos.html">Celana Screamous</a></li>
+          <li><a href="produk2celanaDobujack.html">Celana Dobujack</a></li>
+        </ul>
+      </li>
+
+      <li><a href="abouttoko.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="about-section">
+    <h1>Tentang Gilang Store</h1>
+    <p>Gilang Store adalah destinasi belanja online yang menghadirkan koleksi Jaket dan Celana perlengkapan outdoor modern. Kami menyediakan produk berkualitas tinggi seperti Celana hiking, jaket tahan cuaca, dan aksesoris pendukung petualangan Anda.</p>
+    <p>Sejak awal berdirinya pada tahun 2024, kami berkomitmen memberikan pelayanan terbaik dan pengalaman belanja yang menyenangkan. Gilang Store tidak hanya menjual barang, tapi juga menghadirkan gaya hidup aktif dan eksploratif.</p>
+    <p>Terima kasih telah mempercayakan kebutuhan petualanganmu kepada Gilang Store!</p>
+  </section>
+    </div>
+
+  <script>
+    function toggleDropdown(id) {
+      const menu = document.getElementById(id);
+      const isVisible = menu.style.display === "block";
+      document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+      menu.style.display = isVisible ? "none" : "block";
+    }
+
+    window.addEventListener("click", function(e) {
+      if (!e.target.matches(".dropdown-btn")) {
+        document.querySelectorAll(".dropdown-menu").forEach(m => m.style.display = "none");
+      }
+    });
+  </script>
+</body>
+</html>

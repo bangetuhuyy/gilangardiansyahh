@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Pembayaran</title>
+  <link rel="stylesheet" href="FormPembayaran.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Form Pembayaran</h1>
+    <form onsubmit="submitForm(); return false;">
+      <div class="form-group">
+        <label for="nama">Masukkan Nama:</label>
+        <input type="text" id="nama" placeholder="Nama Lengkap" required>
+      </div>
+
+      <div class="form-group">
+        <label for="alamat">Masukkan Alamat:</label>
+        <textarea id="alamat" placeholder="Alamat Lengkap" required></textarea>
+      </div>
+
+      <div class="produk-container">
+        <div class="produk-item">
+          <label>Produk 1:</label>
+          <select id="produk1" onchange="tampilkanSubProduk('produk1')">
+            <option value="">-- Pilih Produk --</option>
+            <option value="jaketCredifox">Jaket Credifox</option>
+            <option value="jaketScreamous">Jaket Screamous</option>
+            <option value="jaketDobujack">Jaket Dobujack</option>
+          </select>
+          <select id="subProduk1" onchange="updateHarga('produk1')">
+            <option value="">-- Pilih Varian Jaket --</option>
+          </select>
+          <label>Jumlah:</label>
+          <input type="number" id="jumlah1" value="1" min="1" onchange="hitungTotal()">
+          <input type="text" id="harga1" readonly>
+        </div>
+
+        <div class="produk-item">
+          <label>Produk 2:</label>
+          <select id="produk2" onchange="tampilkanSubProduk('produk2')">
+            <option value="">-- Pilih Produk --</option>
+            <option value="celanaCredifox">Celana Credifox</option>
+            <option value="celanaScreamous">Celana Screamous</option>
+            <option value="celanaDobujack">Celana Dobujack</option>
+          </select>
+          <select id="subProduk2" onchange="updateHarga('produk2')">
+            <option value="">-- Pilih Varian Celana --</option>
+          </select>
+          <label>Jumlah:</label>
+          <input type="number" id="jumlah2" value="1" min="1" onchange="hitungTotal()">
+          <input type="text" id="harga2" readonly>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Total Bayar:</label>
+        <input type="text" id="total" readonly>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" class="submit">Proses</button>
+        <button type="reset" class="kembali">Reset</button>
+        <button type="button" class="backtohome" onclick="window.location.href='home.html'">Back to Home</button>
+      </div>
+    </form>
+  </div>
+
+  <div id="popupBox" class="popup">
+    <div class="popup-content">
+      <div class="circle-box">
+        <img src="foto/centangtranparan.webp" alt="Berhasil" class="checkmark-img">
+        <span class="popup-success-text">Pembayaran Berhasil</span>
+      </div>
+      <p><strong>Nama:</strong> <span id="popupNama"></span></p>
+      <p><strong>Alamat:</strong> <span id="popupAlamat"></span></p>
+      <p><strong>Produk 1:</strong> <span id="popupProduk1"></span></p>
+      <p><strong>Produk 2:</strong> <span id="popupProduk2"></span></p>
+      <p><strong>Total:</strong> Rp <span id="popupTotal"></span></p>
+      <p>Terima kasih telah berbelanja di Gilang Store</p>
+      <button onclick="tutupPopup()">Tutup</button>
+    </div>
+  </div>
+
+  <script src="javaform.js"></script>
+</body>
+</html>
